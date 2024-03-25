@@ -31,9 +31,11 @@ import { decode } from "html-entities";
 
   function handleClick(text){
     allQuestions.map(correctAnswer =>{
-      if(correctAnswer.correctAnswer === text){
-        console.log("Correcta!")
-      }
+      correctAnswer.answers.map(element => {
+        if(text === element.answer){
+         console.log("ok")
+        }
+      })
     })
   }
   const render = allQuestions.map(element => {
