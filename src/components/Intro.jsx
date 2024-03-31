@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 
 export default function Intro () {
     return (
@@ -8,4 +8,4 @@ export default function Intro () {
             <button className='intro--btn'>Start Quizz</button>
         </div>
     )
-}
+} */

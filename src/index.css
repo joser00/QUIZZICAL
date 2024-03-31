@@ -1,0 +1,43 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    font-family:  "Karla";
+    user-select: none;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+/* Ocultar los radio buttons */
+input[type="radio"] {
+    display: none;
+  }
+  /* Estilos para los labels que simulan botones */
+  label {
+    display: inline-block;
+    cursor: pointer;
+    color: #293264;
+    padding: 8px 16px;
+    border: 1px solid #4D5B9E;
+    background-color:transparent;
+    border-radius: 7px;
+    margin-right: 10px;
+  }
+.main-container {
+    padding: 1em;
+}
+  .btn-container h1 {
+    font-size: 1.25rem;
+    padding: 0.75em 0;
+    color: #293264
+}
+  .btn {
+    display: inline;
+    
+  }
+  hr {
+    margin-top: 2em;
+    color: #293264;
+  }
+  
