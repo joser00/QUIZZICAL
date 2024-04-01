@@ -1,10 +1,11 @@
 import React from "react";
 
 export default function Answer(props) {
+
   return (
-    <div className="btn">
-      <label>{props.answer}</label>
-      <input type="radio" id = {props.id} name = {props.name} value = {props.value}/>
-    </div>
+    <label >
+      <input onChange={props.handleFunction} type="radio" id = {props.id} name = {props.name} value = {props.value}/>
+      <span>{props.answer}</span>
+    </label>
   );
 }

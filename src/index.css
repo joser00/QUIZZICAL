@@ -9,21 +9,6 @@ body {
     justify-content: center;
     padding: 2em;
 }
-/* Ocultar los radio buttons */
-input[type="radio"] {
-    display: none;
-  }
-  /* Estilos para los labels que simulan botones */
-  label {
-    display: inline-block;
-    cursor: pointer;
-    color: #293264;
-    padding: 8px 16px;
-    border: 1px solid #4D5B9E;
-    background-color:transparent;
-    border-radius: 7px;
-    margin-right: 10px;
-  }
 .main-container {
     padding: 1em;
 }
@@ -32,12 +17,44 @@ input[type="radio"] {
     padding: 0.75em 0;
     color: #293264
 }
-  .btn {
-    display: inline;
-    
-  }
   hr {
     margin-top: 2em;
     color: #293264;
   }
-  
+  /* Radio Style */
+  /* Estilos para el contenedor del radio-button */
+label {
+  display: inline-block;
+  position: relative;
+  padding: 8px 16px;
+  background-color:transparent;
+  border: 1px solid #4D5B9E;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  color: #293264;
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+/* Estilos para el input de radio */
+input[type="radio"] {
+  display: none; /* Ocultar el input de radio */
+}
+
+/* Estilos para el botón cuando está seleccionado */
+input[type="radio"]:checked + span {
+  background-color: #D6DBF5;
+  color: #293264;
+}
+
+/* Estilos para el texto dentro del botón */
+span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Estilos para el botón al pasar el cursor */
+label:hover {
+  background-color: #e0e0e0;
+}
