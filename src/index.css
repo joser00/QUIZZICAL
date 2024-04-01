@@ -7,10 +7,9 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 2em;
 }
 .main-container {
-    padding: 1em;
+    padding: 2em;
 }
   .btn-container h1 {
     font-size: 1.25rem;
@@ -57,4 +56,21 @@ span {
 /* Estilos para el botón al pasar el cursor */
 label:hover {
   background-color: #e0e0e0;
+}
+#score-span {
+  display: none;
+  font-weight: bolder;
+  margin-right: 1em;
+}
+.check-btn {
+  padding: 1.1em 2em;
+  background-color:#4D5B9E;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  color: #e0e0e0;
+  font-weight: bold;
+  display: inline-block;
+  margin: 1em auto;
 }

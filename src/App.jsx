@@ -7,7 +7,8 @@ import Question from './components/Question'
 export default function App() {
   const [data, setData] = React.useState([]);
   const [quiz, setQuiz] = React.useState([]);
-  const [answers, setAnswers] = React.useState([])
+  const [counter, setCounter] = React.useState(0)
+  const [myAnswers, setMyAnswers] = React.useState([])
   //Iteramos sobre las propiedades del objeto extrayendo el valor de sus propiedades y salvandolas en data
   React.useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5&category=29&difficulty=medium&type=multiple")
@@ -45,18 +46,25 @@ export default function App() {
   //handle function
   function handleFunction(event) {
   const {value} = event.target
-  quiz.map(answer => {
-    if(value === answer.correctAnswer){
-      console.log('found')
-    }else {
-      console.log("not found")
+  quiz.map(element => {
+    if( value === element.correctAnswer){
+      setMyAnswers(oldValue => {
+        return [...oldValue, value]
+      })
     }
   })
   }
   ///Submit Form function
   function handleSubmit(event){
     event.preventDefault()
-
+    quiz.map(element => {
+      myAnswers.map(element2 =>{
+        if(element.correctAnswer === element2){
+          setCounter(old => old+1)
+        }
+      })
+    })
+    console.log(myAnswers)
   }
   //Render the quiz
   const render = quiz.map((element) => {
@@ -70,10 +78,20 @@ export default function App() {
       </div>
     );
   });
+  function showCounter(){
+    const scoreSpan = document.getElementById('score-span')
+      if (scoreSpan.style.display === 'none') {
+        scoreSpan.style.display = 'inline-block'; // Mostrar el texto
+      } else {
+        scoreSpan.style.display = 'inline-block'; // Ocultar el texto
+      }
+  }
   //JSX Code
   return (
     <form className="main-container" onSubmit={handleSubmit}>
       {render}
+      <span id= "score-span">You scored {counter}/5 correct answers</span>
+      <button className="check-btn" id="check"onClick={showCounter}>Check Answers</button>
     </form>
   );
 }
