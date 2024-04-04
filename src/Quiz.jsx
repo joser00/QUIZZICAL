@@ -56,20 +56,17 @@ export default function App() {
         });
       }
     });
-   
   }
-  console.log(myAnswers)
   ///Submit Form function
   function handleSubmit(event) {
     event.preventDefault();
-    quiz.map((element) => {
-      myAnswers.map((element2) => {
+    myAnswers.map((element2) => {
+      quiz.map((element) => {
         if (element.correctAnswer === element2) {
           setCounter((old) => old + 1);
-          console.log(counter)
         }
       });
-    })
+    });
   }
   //Render the quiz
   const render = quiz.map((element) => {
@@ -84,8 +81,8 @@ export default function App() {
               id={value}
               name={element.question}
               value={value}
-              isTrue = {element.correctAnswer === value}
-              isSubmit = {gameFinished}
+              isTrue={element.correctAnswer === value}
+              isSubmit={gameFinished}
             />
           );
         })}
@@ -111,13 +108,12 @@ export default function App() {
 
   //JSX Code
   return (
-      <form className="main-container" onSubmit={handleSubmit}>
-        {render}
-        <span id="score-span">You scored {counter}/5 correct answers</span>
-        <button className="check-btn" id="check" onClick={showCounter}>
-          {gameFinished ? "Play Again" : "Check Answers"}
-        </button>
-      </form>
-  )
-
+    <form className="main-container" onSubmit={handleSubmit}>
+      {render}
+      <span id="score-span">You scored {counter}/5 correct answers</span>
+      <button className="check-btn" id="check" onClick={showCounter}>
+        {gameFinished ? "Play Again" : "Check Answers"}
+      </button>
+    </form>
+  );
 }
