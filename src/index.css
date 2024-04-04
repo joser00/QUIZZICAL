@@ -3,18 +3,29 @@
     font-family:  "Karla";
     user-select: none;
 }
+#root {
+  display: flex;
+  align-items: center;
+}
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
+    background: url(assets/blobs-left.png), url(assets/blobs-right.png) ;
+    background-position: bottom left, top right;
+    background-repeat: no-repeat;
 }
 .main-container {
     padding: 2em;
+    max-width: 800px;
 }
   .btn-container h1 {
     font-size: 1.25rem;
     padding: 0.75em 0;
     color: #293264
+}
+.btn-container label {
+  margin: 0.35em;
 }
   hr {
     margin-top: 2em;
@@ -62,7 +73,15 @@ label:hover {
   font-weight: bolder;
   margin-right: 1em;
 }
-.check-btn {
+.intro {
+text-align: center;
+display: flex;
+flex-direction: column;
+}
+.intro h1 {
+  margin: 0;
+}
+.check-btn, .intro--btn {
   padding: 1.1em 2em;
   background-color:#4D5B9E;
   border: none;
